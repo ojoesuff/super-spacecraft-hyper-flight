@@ -17,7 +17,7 @@ public class SpacecraftDeath : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Wall")
+        if(collision.collider.tag == "Wall" || collision.collider.tag == "Enemy")
         {
             Die();
         }
