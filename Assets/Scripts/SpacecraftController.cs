@@ -10,17 +10,27 @@ public class SpacecraftController : MonoBehaviour
     SpacecraftMovement spacecraftMovement;
     SpacecraftDeath spacecraftDeath;
     public float winSpeed;
-
+    private GameMaster gameMaster;
     CinemachineBrain cinemachine;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spacecraftControls = GetComponent<SpacecraftControls>();
         trail = GameObject.Find("spacecraft_trail");
         spacecraftMovement = GetComponent<SpacecraftMovement>();
         spacecraftDeath = GetComponent<SpacecraftDeath>();
         cinemachine = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();
+
+        Vector2 lastCheckointPos = gameMaster.getLastCheckpointPos();
+        if(lastCheckointPos != null)
+        {
+            trail.SetActive(false);
+            transform.position = lastCheckointPos;
+            trail.SetActive(true);
+        }
     }
 
     public void DisableSpacecraft()

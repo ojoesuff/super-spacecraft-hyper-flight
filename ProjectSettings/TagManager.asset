@@ -8,6 +8,7 @@ TagManager:
   - Background
   - EndGoal
   - Enemy
+  - GameMaster
   layers:
   - Default
   - TransparentFX
