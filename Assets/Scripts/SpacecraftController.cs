@@ -31,6 +31,11 @@ public class SpacecraftController : MonoBehaviour
             transform.position = lastCheckointPos;
             trail.SetActive(true);
         }
+        Quaternion spacecraftRotation = gameMaster.getSpacecraftRotation();
+        if(spacecraftRotation != null)
+        {
+            transform.rotation = spacecraftRotation;
+        }
     }
 
     public void DisableSpacecraft()
