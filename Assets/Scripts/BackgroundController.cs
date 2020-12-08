@@ -11,6 +11,7 @@ public class BackgroundController : MonoBehaviour
     private float height;
     private GameObject cam;
     private Vector3 camPos;
+    public float speed;
 
     void Start()
     {
@@ -54,6 +55,6 @@ public class BackgroundController : MonoBehaviour
     public void scroll(Vector3 movement)
     {
         //background scroll opposite direction to craft
-        transform.position += movement;
+        transform.position += movement * speed;
     }
 }
