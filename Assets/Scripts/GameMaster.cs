@@ -9,6 +9,7 @@ public class GameMaster : MonoBehaviour
     private Vector2 lastCheckpointPos;
     private Quaternion rotation;
     private long timeElapsedMillisec;
+    private bool playCountdown;
 
     void Awake()
     {
@@ -20,6 +21,11 @@ public class GameMaster : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        playCountdown = true;
     }
 
     public void setLastCheckpointPos(Vector2 pos)
@@ -47,5 +53,17 @@ public class GameMaster : MonoBehaviour
     public long getTimeElapsed()
     {
         return timeElapsedMillisec;
+    }
+    public void enableCountdown()
+    {
+        playCountdown = true;
+    }
+    public void disableCountdown()
+    {
+        playCountdown = false;
+    }
+    public bool getPlayCountdown()
+    {
+        return playCountdown;
     }
 }

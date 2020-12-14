@@ -46,6 +46,14 @@ public class SpacecraftController : MonoBehaviour
         spacecraftMovement.enabled = false;        
     }
 
+    public void enableSpacecraft()
+    {
+        spacecraftControls.enabled = true;
+        spriteRenderer.enabled = true;
+        trail.SetActive(true);
+        spacecraftMovement.enabled = true;
+    }
+
     public void levelComplete()
     {
         spacecraftMovement.disableMovement();
