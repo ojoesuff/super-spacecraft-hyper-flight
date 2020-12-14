@@ -9,6 +9,7 @@ TagManager:
   - EndGoal
   - Enemy
   - GameMaster
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

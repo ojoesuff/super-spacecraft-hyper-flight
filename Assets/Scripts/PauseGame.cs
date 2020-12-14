@@ -8,16 +8,20 @@ public class PauseGame : MonoBehaviour
     bool countdownPlaying;
     bool gamePaused;
     bool spacecraftDead;
+    GameObject pauseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
         spacecraftController = FindObjectOfType<SpacecraftController>();        
         gamePaused = false;
+        pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
     }
 
     // Update is called once per frame
     void Update()
     {
+
         countdownPlaying = FindObjectOfType<LevelController>().countdownPlaying;
         spacecraftDead = FindObjectOfType<SpacecraftDeath>().spacecraftDead;
 
@@ -37,10 +41,7 @@ public class PauseGame : MonoBehaviour
 
     void pauseGame()
     {
-        // stop movement
         spacecraftController.DisableSpacecraft();
-        // stop controls
-        // enable menu
     }
     void unpauseGame()
     {
