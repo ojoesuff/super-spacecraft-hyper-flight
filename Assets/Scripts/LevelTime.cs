@@ -17,7 +17,6 @@ public class LevelTime : MonoBehaviour
     {
         timer = new Stopwatch();
         timeText = gameObject.GetComponent<Text>();
-        //startTimer();
         gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
         gamemasterElapsedMilliseconds = gameMaster.getTimeElapsed();
     }
@@ -44,5 +43,17 @@ public class LevelTime : MonoBehaviour
     public void startTimer()
     {
         timer.Start();
+    }
+    public void stopTimer()
+    {
+        timer.Stop();
+    }
+    public void hideTimer()
+    {
+        timeText.gameObject.SetActive(false);
+    }
+    public void showTimer()
+    {
+        timeText.gameObject.SetActive(true);
     }
 }

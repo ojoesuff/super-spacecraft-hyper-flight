@@ -13,11 +13,12 @@ public class GameMaster : MonoBehaviour
 
     void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(instance);
-        } else
+        }
+        else
         {
             Destroy(gameObject);
         }
@@ -66,4 +67,12 @@ public class GameMaster : MonoBehaviour
     {
         return playCountdown;
     }
+    public void resetParameters()
+    {
+        lastCheckpointPos = Vector2.zero;
+        rotation = Quaternion.identity;
+        timeElapsedMillisec = 0;
+        playCountdown = true;
+    }
+
 }
