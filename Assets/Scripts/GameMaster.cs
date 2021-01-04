@@ -72,7 +72,7 @@ public class GameMaster : MonoBehaviour
         lastCheckpointPos = Vector2.zero;
         rotation = Quaternion.identity;
         timeElapsedMillisec = 0;
-        playCountdown = true;
+        playCountdown = false;
     }
 
 }

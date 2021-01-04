@@ -25,7 +25,9 @@ public class LevelController : MonoBehaviour
         playLevelCountdown = gameMaster.getPlayCountdown();
         countdownTime = 4.0f;
         decreaseCountDownTime = countdownTime;
-        if(playLevelCountdown)
+        countdownPlaying = false;
+
+        if (playLevelCountdown)
         {
             beginCountdown();
         } else
@@ -36,18 +38,17 @@ public class LevelController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        countdownPlaying = decreaseCountDownTime > 0;
+    {        
         if(playLevelCountdown)
         {
-            if(countdownPlaying)
+            countdownPlaying = decreaseCountDownTime > 0;
+            if (countdownPlaying)
             {
                 decreaseCountDownTime -= Time.deltaTime;
             } else
             {
                 endCountdown();
             }
-
         }
     }
 
