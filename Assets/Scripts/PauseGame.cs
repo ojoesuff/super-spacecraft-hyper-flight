@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseGame : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class PauseGame : MonoBehaviour
         countdownPlaying = FindObjectOfType<LevelController>().countdownPlaying;
         spacecraftDead = FindObjectOfType<SpacecraftDeath>().spacecraftDead;
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !countdownPlaying && !spacecraftDead)
+        if ((Input.GetKeyDown(KeyCode.Escape) || Gamepad.current.startButton.wasPressedThisFrame) && !countdownPlaying && !spacecraftDead)
         {
             if(gamePaused)
             {
